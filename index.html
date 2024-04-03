@@ -9,8 +9,9 @@
       src="https://kit.fontawesome.com/7a5b5a754b.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
-  <body>
+  <body id="app">
     <div class="bg-main">
       <section class="main-section row">
         <!-- sezione chat laterale -->
@@ -53,15 +54,17 @@
             <li class="open-chats">
               <div class="bg">
                 <ul class="lista-contatti">
-                  <li class="contact row">
+                  <li v-for="contatto in contacts" class="contact row">
                     <div class="row">
-                      <img class="avatar" src="./img/avatar_1.jpg" alt="" />
+                      <img class="avatar" :src="contatto.avatar" alt="" />
                       <div class="d-none d-lg-block">
-                        <h3 class="contact-name">Michele</h3>
+                        <h3 class="contact-name">{{contatto.name}}</h3>
                         <p class="chat-preview">Lorem ipsum dolor sit.</p>
                       </div>
                     </div>
-                    <span class="d-none d-lg-block">16:46</span>
+                    <span class="d-none d-lg-block"
+                      >{{contatto.messages[contatto.messages.length-1].date}}</span
+                    >
                   </li>
                 </ul>
               </div>
@@ -117,5 +120,6 @@
         </div>
       </section>
     </div>
+    <script src="./js/app.js"></script>
   </body>
 </html>
