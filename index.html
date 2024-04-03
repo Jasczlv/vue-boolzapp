@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolzapp</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/7a5b5a754b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="bg-main">
+      <section class="main-section row">
+        <!-- sezione chat laterale -->
+
+        <div class="sidebar d-none">
+          <ul class="container column">
+            <li class="sidebar-user-profile">
+              <div class="bg row">
+                <img class="avatar" src="./img/avatar_1.jpg" alt="" />
+                <div class="d-none">
+                  <a href="#"><i class="fa-solid fa-rotate-right"></i></a>
+                  <a href="#"><i class="fa-solid fa-message"></i></a>
+                  <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                </div>
+              </div>
+            </li>
+
+            <li class="attiva-notifiche d-none">
+              <div class="bg row">
+                <div><i class="fa-solid fa-bell-slash"></i></div>
+                <div class="column">
+                  <span>Ricevi notifiche di nuovi messaggi</span>
+                  <span>Attiva notifiche desktop</span>
+                </div>
+              </div>
+            </li>
+
+            <li class="search-contacts d-none">
+              <div class="bg">
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="Cerca o inizia una nuova chat"
+                />
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+            </li>
+
+            <li class="open-chats">
+              <div class="bg">
+                <ul class="lista-contatti">
+                  <li class="contact row">
+                    <div class="row">
+                      <img class="avatar" src="./img/avatar_1.jpg" alt="" />
+                      <div class="d-none d-lg-block">
+                        <h3 class="contact-name">Michele</h3>
+                        <p class="chat-preview">Lorem ipsum dolor sit.</p>
+                      </div>
+                    </div>
+                    <span class="d-none d-lg-block">16:46</span>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- sezione chat aperta -->
+        <div class="chat-section">
+          <div class="chat-topbar">
+            <div class="bg row">
+              <div class="contact-bar row">
+                <img class="avatar" src="./img/avatar_1.jpg" alt="" />
+                <h3 class="contact-name">Michele</h3>
+              </div>
+
+              <div class="d-none">
+                <a href="#"><i class="fa-solid fa-rotate-right"></i></a>
+                <a href="#"><i class="fa-solid fa-message"></i></a>
+                <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-main">
+            <div class="bg">
+              <div class="column">
+                <div class="message-green">ciao</div>
+                <div class="message-green">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Natus iste vitae temporibus id molestias asperiores, beatae
+                  minus ipsa accusamus commodi!
+                </div>
+
+                <div class="message-white">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Aspernatur necessitatibus sunt possimus.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-type-input">
+            <a href="#"><i class="fa-solid fa-plus"></i></a>
+            <a href="#"><i class="fa-regular fa-face-smile"></i></a>
+            <input
+              class="input-messaggio"
+              type="text"
+              placeholder="Scrivi messaggio"
+            />
+            <a href="#"><i class="fa-solid fa-microphone"></i></a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
