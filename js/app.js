@@ -166,22 +166,13 @@ createApp({
           ],
         },
       ],
+      i: "0",
     };
   },
   methods: {
-    pushTodo() {
-      this.todo.push({
-        text: this.inputValue,
-        done: false,
-      });
-      this.inputValue = "";
-    },
-    isTrue(obj) {
-      if (obj.done === false) {
-        obj.done = true;
-      } else if (obj.done === true) {
-        obj.done = false;
-      }
+    currentContact(index) {
+      this.i = index;
+      console.log(this.i);
     },
   },
 }).mount("#app");

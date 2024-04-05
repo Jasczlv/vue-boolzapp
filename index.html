@@ -54,12 +54,18 @@
             <li class="open-chats">
               <div class="bg">
                 <ul class="lista-contatti">
-                  <li v-for="contatto in contacts" class="contact row">
+                  <li
+                    @click="currentContact(i)"
+                    v-for="(contatto, i) in contacts"
+                    class="contact row"
+                  >
                     <div class="row">
                       <img class="avatar" :src="contatto.avatar" alt="" />
                       <div class="d-none d-lg-block">
                         <h3 class="contact-name">{{contatto.name}}</h3>
-                        <p class="chat-preview">Lorem ipsum dolor sit.</p>
+                        <p class="chat-preview">
+                          {{contatto.messages[contatto.messages.length-1].message}}
+                        </p>
                       </div>
                     </div>
                     <span class="d-none d-lg-block"
@@ -77,8 +83,8 @@
           <div class="chat-topbar">
             <div class="bg row">
               <div class="contact-bar row">
-                <img class="avatar" src="./img/avatar_1.jpg" alt="" />
-                <h3 class="contact-name">Michele</h3>
+                <img class="avatar" :src="contacts[i].avatar" alt="" />
+                <h3 class="contact-name">{{contacts[i].name}}</h3>
               </div>
 
               <div class="d-none">
@@ -91,17 +97,22 @@
 
           <div class="chat-main">
             <div class="bg">
-              <div class="column">
-                <div class="message-green">ciao</div>
-                <div class="message-green">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Natus iste vitae temporibus id molestias asperiores, beatae
-                  minus ipsa accusamus commodi!
+              <div
+                class="column"
+                v-for="(message, index) in contacts[i].messages"
+              >
+                <div
+                  v-if="contacts[i].messages[index].message.length > 0 && contacts[i].messages[index].status === 'sent'"
+                  class="message-green"
+                >
+                  {{ contacts[i].messages[index].message}}
                 </div>
 
-                <div class="message-white">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Aspernatur necessitatibus sunt possimus.
+                <div
+                  v-if="contacts[i].messages[index].message.length > 0 && contacts[i].messages[index].status === 'received'"
+                  class="message-white"
+                >
+                  {{ contacts[i].messages[index].message}}
                 </div>
               </div>
             </div>
