@@ -167,12 +167,41 @@ createApp({
         },
       ],
       i: "0",
+      inputValue: "",
+      searchValue: "",
     };
   },
+
   methods: {
     currentContact(index) {
       this.i = index;
       console.log(this.i);
+    },
+    pushMessageReceived() {
+      this.contacts[this.i].messages.push({
+        message: "ok!",
+        date: "10/01/2020 15:30:55",
+        status: "received",
+      });
+      this.inputValue = "";
+    },
+    trimmedDate(i) {
+      let data =
+        this.contacts[i].messages[this.contacts[i].messages.length - 1].date;
+      // return (data = data.substring(0, data.length - 3));
+      const [giorno, ora] = data.split(" ");
+      return ora.substring(0, ora.length - 3);
+    },
+
+    pushMessage() {
+      this.contacts[this.i].messages.push({
+        message: this.inputValue,
+        date: "10/01/2020 15:30:55",
+        status: "sent",
+      });
+      this.inputValue = "";
+
+      setTimeout(this.pushMessageReceived, 1000);
     },
   },
 }).mount("#app");

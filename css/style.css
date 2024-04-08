@@ -101,7 +101,7 @@ nav.bg-blue {
 
 .row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .column {
@@ -159,6 +159,16 @@ nav.bg-blue {
 
 /* chat aperta */
 
+.hidden {
+  display: none;
+}
+
+.open-chats,
+.open-chats > .bg,
+.lista-contatti {
+  height: 100%;
+}
+
 .chat-topbar {
   width: 100%;
   flex-grow: 0;
@@ -199,7 +209,7 @@ nav.bg-blue {
   padding-left: 10px;
 }
 
-.message-green {
+.sent {
   background-color: #005c4b;
   width: fit-content;
   padding: 10px 15px;
@@ -210,7 +220,7 @@ nav.bg-blue {
   margin-right: 20px;
   margin-top: 10px;
 }
-.message-white {
+.received {
   background-color: #202c33;
   width: fit-content;
   padding: 10px 15px;
@@ -363,8 +373,13 @@ nav.bg-blue {
 
   /* chat preview */
 
+  .date {
+    font-size: 10px;
+  }
+
   .chat-preview {
-    flex-grow: 1;
+    flex-grow: 0;
+    font-size: 10px;
   }
 
   .contact {
@@ -375,9 +390,6 @@ nav.bg-blue {
     font-size: 14px;
   }
 
-  .chat-preview {
-    font-size: 10px;
-  }
   a .contact:last-child {
     font-size: 14px;
   }
@@ -418,11 +430,6 @@ nav.bg-blue {
 
   .sidebar-user-profile div.d-none {
     display: flex;
-  }
-
-  .chat-preview {
-    display: flex;
-    flex-direction: row;
   }
 
   .chat-topbar .d-none {
